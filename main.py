@@ -3,12 +3,12 @@ import time
 
 
 def main():
-    last_textchat = (None, None)
+    last_update_id = None
     while True:
-        text, chat = get_last_chat_id_and_text(get_updates())
-        if (text, chat) != last_textchat:
-            send_message(text, chat)
-            last_textchat = (text, chat)
+        updates = get_updates(last_update_id)
+        if len(updates["result"]) > 0:
+            last_update_id = get_last_update_id(updates) + 1
+            echo_all(updates)
         time.sleep(0.5)
 
 
