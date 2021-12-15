@@ -1,2 +1,5 @@
 /api.txt
 /.idea/vcs.xml
+/.idea/dataSources.xml
+/.idea/sqldialects.xml
+/todo.sqlite
